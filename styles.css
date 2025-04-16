@@ -253,3 +253,42 @@ footer {
   padding: 2rem;
   text-align: center;
 }
+
+.search-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.search-form input {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 2px solid #ddd;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.search-form input:focus {
+  width: 250px;
+  outline: none;
+  border-color: #007bff;
+}
+
+.search-form button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}

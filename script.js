@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartDisplay = document.getElementById("cart-count");
     const cartItems = document.getElementById("cart-items");
     const cartTotal = document.getElementById("cart-total");
+    const searchInput = document.querySelector(".search-form input");
+    const products = document.querySelectorAll(".product");
 
     function updateCart() {
         cartDisplay.textContent = cart.length;
@@ -23,8 +25,30 @@ document.addEventListener("DOMContentLoaded", function () {
         cartTotal.textContent = total.toFixed(2);
     }
 
+    
+    searchInput.addEventListener("input", function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        products.forEach(product => {
+            const productName = product.querySelector("h1").textContent.toLowerCase();
+            if (productName.includes(searchTerm)) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+
+   
+    document.querySelectorAll(".buy-button").forEach(button => {
+        button.classList.add("add-to-cart");
+        button.setAttribute("data-name", button.parentElement.querySelector("h1").textContent);
+        button.setAttribute("data-price", parseFloat(button.parentElement.querySelector("p").textContent.replace("Preț: ", "").replace(" MDL", "")));
+    });
+
     document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", function () {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
             const name = this.getAttribute("data-name");
             const price = parseFloat(this.getAttribute("data-price"));
             const image = this.parentElement.querySelector("img").src;
