@@ -6,4 +6,5 @@ Landing page cu produse de îmbrăcăminte.
 ## Tehnologii folosite:
 - HTML  
 - CSS
+- JavaScript
 - https://vektor777a.github.io/landing-page-magazin-haine/
