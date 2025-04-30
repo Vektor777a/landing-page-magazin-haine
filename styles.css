@@ -285,6 +285,24 @@ header {
   color: #c00000;
 }
 
+.clear-cart {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.clear-cart:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
 footer {
   background-color: var(--secondary-color);
   color: var(--white);
