@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartTotal = document.getElementById("cart-total");
     const cartButton = document.querySelector(".cart-button");
     const cartContent = document.querySelector(".cart-content");
+    const clearCartButton = document.querySelector(".clear-cart");
 
     function updateCart() {
         cartDisplay.textContent = cart.length;
@@ -67,6 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cartContent.addEventListener("click", function(e) {
         e.stopPropagation();
+    });
+
+    clearCartButton.addEventListener("click", function() {
+        cart = [];
+        updateCart();
     });
 
     updateCart();
